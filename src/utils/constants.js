@@ -4,8 +4,16 @@ import WordSVG3 from '../components/WordSVG3.vue';
 import BoxGrow from '../components/BoxGrow.vue';
 import LoadingDots from '../components/LoadingDots.vue';
 import LoadingCircles from '../components/LoadingCircles.vue';
+import GeneralSVG from '../components/GeneralSVG.vue';
+import PlatonicShapes from '../components/PlatonicShapes.vue';
 
 export const SVG_LIST = [
+  {
+    title: 'General',
+    description: 'Some svg basics',
+    component: GeneralSVG,
+    infinite: false,
+  },
   {
     title: 'Loading circles',
     description:
@@ -45,6 +53,12 @@ export const SVG_LIST = [
     description:
       'A simple SVG animation that animates a word as if it is drawn poorly.',
     component: WordSVG3,
+    infinite: false,
+  },
+  {
+    title: 'Platonic Shapes svg',
+    description: 'Just a small collection of basic shapes created using svg',
+    component: PlatonicShapes,
     infinite: false,
   },
 ];
