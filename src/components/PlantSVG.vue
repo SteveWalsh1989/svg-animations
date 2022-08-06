@@ -1,6 +1,6 @@
 <script setup>
 /*
- * General SVG stuff
+ * Basic Animated SVG 
  
  */
 </script>

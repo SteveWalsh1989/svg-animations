@@ -4,14 +4,15 @@ import WordSVG3 from '../components/WordSVG3.vue';
 import BoxGrow from '../components/BoxGrow.vue';
 import LoadingDots from '../components/LoadingDots.vue';
 import LoadingCircles from '../components/LoadingCircles.vue';
-import GeneralSVG from '../components/GeneralSVG.vue';
+import PlantSVG from '../components/PlantSVG.vue';
 import PlatonicShapes from '../components/PlatonicShapes.vue';
 
 export const SVG_LIST = [
   {
-    title: 'General',
-    description: 'Some svg basics',
-    component: GeneralSVG,
+    title: 'Custom SVG',
+    description:
+      'Added a couple of small animations to SVG, added some custom groups to help out here and there',
+    component: PlantSVG,
     infinite: false,
   },
   {
