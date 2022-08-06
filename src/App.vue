@@ -3,6 +3,7 @@ import Header from './components/Header.vue';
 import SVGCard from './components/SVGCard.vue';
 import WordSVG from './components/WordSVG.vue';
 import WordSVG2 from './components/WordSVG2.vue';
+import WordSVG3 from './components/WordSVG3.vue';
 
 const SVG_LIST = [
   {
@@ -16,6 +17,12 @@ const SVG_LIST = [
     description:
       "A simple SVG animation that animates a word. Each letter is a separate path with a delay to start the animation and fill animation is used after the each individual letter's animation has finished.",
     component: WordSVG2,
+  },
+  {
+    title: 'Handwritting SVG',
+    description:
+      'A simple SVG animation that animates a word as if it is hand drawn.',
+    component: WordSVG3,
   },
 ];
 </script>

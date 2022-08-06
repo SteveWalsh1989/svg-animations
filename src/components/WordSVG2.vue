@@ -83,7 +83,7 @@ onMounted(() => {
 </template>
 
 <style scoped>
-/* 8 letters in Teamwork */
+/* 11 letters in tailwindcss */
 
 #logo path:nth-child(1) {
   stroke-dasharray: 210px;
