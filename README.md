@@ -1,6 +1,14 @@
 # SVGs
 
-This is a sample project to test out some SVG animations
+This is a sample project to practice SVG and css animations
+
+
+## Starting project
+
+
+Run `npm i` 
+
+Run `npm run dev` 
 
 
 ## Examples of animations 
@@ -15,16 +23,6 @@ gifs make them seem a bit choppy, they are much smoother when running on the pro
 
 
 ##
+SVGs created using [Figma](www.figma.com/)
 
-SVG created using [Figma](www.figma.com/)
-
-
-
-
-## Starting project
-
-
-Run `npm i` 
-
-Run `npm run dev` 
 
