@@ -1,10 +1,8 @@
-<script setup>
-// CONSTANTS / VARIABLES
-</script>
+<script setup></script>
 
 <template>
   <header
-    class="fixed top-0 left-0 w-full mb-60 py-12 bg-primary text-primary-white"
+    class="flex w-full py-12 bg-primary text-primary-white justify-center"
   >
     <h1 class="text-4xl">CSS Animations</h1>
   </header>
