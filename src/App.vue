@@ -1,51 +1,21 @@
 <script setup>
 import Header from './components/Header.vue';
 import SVGCard from './components/SVGCard.vue';
-import WordSVG from './components/WordSVG.vue';
-import WordSVG2 from './components/WordSVG2.vue';
-import WordSVG3 from './components/WordSVG3.vue';
-import BoxGrow from './components/BoxGrow.vue';
-
-const SVG_LIST = [
-  {
-    title: 'Growing box animation',
-    description:
-      'Css animation to make a box/card grow, could be something popping up with info on website as yoiu scroll or click to expand.',
-    component: BoxGrow,
-  },
-  {
-    title: 'Logo appearing SVG 1',
-    description:
-      "A simple SVG animation that animates a word. Each letter is a separate path with a delay to start the animation and a final fill animation is used after the final letter's animation has finished .",
-    component: WordSVG,
-  },
-  {
-    title: 'Logo appearing SVG 2',
-    description:
-      "A simple SVG animation that animates a word. Each letter is a separate path with a delay to start the animation and fill animation is used after the each individual letter's animation has finished.",
-    component: WordSVG2,
-  },
-  {
-    title: 'Handwritting SVG',
-    description:
-      'A simple SVG animation that animates a word as if it is hand drawn.',
-    component: WordSVG3,
-  },
-];
+import { SVG_LIST } from './utils/constants.js';
 </script>
 
 <template>
   <div class="w-screen flex flex-col">
     <Header />
     <SVGCard
-      v-for="items in SVG_LIST"
-      :key="items.title"
-      :title="items.title"
-      :description="items.description"
+      v-for="item in SVG_LIST"
+      :key="item.title"
+      :title="item.title"
+      :description="item.description"
       class="mt-40"
     >
       <template #svg-animation>
-        <component :is="items.component" />
+        <component :is="item.component" />
       </template>
     </SVGCard>
   </div>
