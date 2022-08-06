@@ -9,6 +9,10 @@ const props = defineProps({
     type: String,
     required: true,
   },
+  canRestart: {
+    type: Boolean,
+    default: true,
+  },
 });
 
 const renderSVG = ref(true);
@@ -27,6 +31,7 @@ function restartAnimation() {
       <h2 class="text-2xl mb-8 font-semibold underline">{{ title }}</h2>
       <p class="text-sm">{{ description }}</p>
       <button
+        v-if="canRestart"
         class="bg-primary hover:bg-secondary hover:text-black text-primary-white font-bold py-2 px-4 rounded mt-8"
         @click="restartAnimation()"
       >

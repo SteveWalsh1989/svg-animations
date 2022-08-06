@@ -13,6 +13,7 @@ import { SVG_LIST } from './utils/constants.js';
       :key="item.title"
       :title="item.title"
       :description="item.description"
+      :can-restart="!item.infinite"
       class="mt-20 mx-10 md:mx-32 lg:mx-96"
     >
       <template #svg-animation>
