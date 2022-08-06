@@ -27,10 +27,10 @@ function restartAnimation() {
       <h2 class="text-2xl mb-8 font-semibold underline">{{ title }}</h2>
       <p class="text-sm">{{ description }}</p>
       <button
-        class="bg-primary-blue hover:bg-blue-700 text-primary-white font-bold py-2 px-4 rounded mt-8"
+        class="bg-primary hover:bg-secondary hover:text-black text-primary-white font-bold py-2 px-4 rounded mt-8"
         @click="restartAnimation()"
       >
-        Restart
+        Restart Animation
       </button>
     </div>
     <div

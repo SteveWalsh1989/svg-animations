@@ -1,16 +1,14 @@
 <script setup>
+/*
+ * SVG of the word "Teamwork"
+ * Fills line stroke on animation and then fills entire color at the end
+ */
 import { onMounted, ref } from 'vue';
+
 const logo = ref('#logo path');
 
-// prints each letter of svg and path lengths for stroke animation css properties
-// function animate(list) {
-//   for (let i = 0; i < list.length; i++) {
-//     console.log(`Letter ${i} is ${list[i].getTotalLength()}`);
-//   }
-// }
 onMounted(() => {
   const nodeList = logo.value.children;
-  animate(nodeList);
 });
 </script>
 
