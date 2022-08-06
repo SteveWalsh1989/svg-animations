@@ -1,7 +1,17 @@
 <script setup>
-import { ref } from 'vue';
+import { onMounted, ref } from 'vue';
 const logo = ref('#logo path');
-console.log('logo', logo);
+
+function animate(list) {
+  for (let i = 0; i < list.length; i++) {
+    console.log(`Letter ${i} is ${list[i].getTotalLength()}`);
+  }
+}
+
+onMounted(() => {
+  const nodeList = logo.value.children;
+  animate(nodeList);
+});
 </script>
 
 <template>
