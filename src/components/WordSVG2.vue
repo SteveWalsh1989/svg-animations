@@ -9,7 +9,6 @@ const logo = ref('#logo path');
 
 onMounted(() => {
   const nodeList = logo.value.children;
-  console.log('🍕 > onMounted > nodeList', nodeList);
 });
 </script>
 
