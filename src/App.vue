@@ -5,8 +5,9 @@ import SVGCard from './components/SVGCard.vue';
 
 const SVG_LIST = [
   {
-    title: 'Word SVG',
-    description: 'A simple SVG animation that animates a word.',
+    title: 'Logo appearing SVG',
+    description:
+      "A simple SVG animation that animates a word. Each letter is a separate path with a delay to start the animation and a final fill animation is used after the final letter's animation has finished .",
     component: WordSVG,
   },
 ];

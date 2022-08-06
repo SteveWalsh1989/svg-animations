@@ -2,12 +2,12 @@
 import { onMounted, ref } from 'vue';
 const logo = ref('#logo path');
 
-function animate(list) {
-  for (let i = 0; i < list.length; i++) {
-    console.log(`Letter ${i} is ${list[i].getTotalLength()}`);
-  }
-}
-
+// prints each letter of svg and path lengths for stroke animation css properties
+// function animate(list) {
+//   for (let i = 0; i < list.length; i++) {
+//     console.log(`Letter ${i} is ${list[i].getTotalLength()}`);
+//   }
+// }
 onMounted(() => {
   const nodeList = logo.value.children;
   animate(nodeList);
@@ -78,29 +78,73 @@ onMounted(() => {
 
 <style scoped>
 /* 8 letters in Teamwork */
+#logo {
+  animation: fill 1s ease forwards 3s;
+}
+
 #logo path:nth-child(1) {
-  stroke-dasharray: 10px;
-  stroke-dashoffset: 10px;
+  stroke-dasharray: 240px;
+  stroke-dashoffset: 240px;
+  animation: letter-animation 2s ease forwards;
 }
 
 #logo path:nth-child(2) {
+  stroke-dasharray: 292px;
+  stroke-dashoffset: 292px;
+  animation: letter-animation 2s ease forwards 0.3s;
 }
 
 #logo path:nth-child(3) {
+  stroke-dasharray: 296px;
+  stroke-dashoffset: 296px;
+  animation: letter-animation 2s ease forwards 0.6s;
 }
 
 #logo path:nth-child(4) {
+  stroke-dasharray: 421px;
+  stroke-dashoffset: 421px;
+  animation: letter-animation 2s ease forwards 0.9s;
 }
 
 #logo path:nth-child(5) {
+  stroke-dasharray: 427px;
+  stroke-dashoffset: 427px;
+  animation: letter-animation 2s ease forwards 1.2s;
 }
 
 #logo path:nth-child(6) {
+  stroke-dasharray: 266px;
+  stroke-dashoffset: 266px;
+  animation: letter-animation 2s ease forwards 1.5s;
 }
 
 #logo path:nth-child(7) {
+  stroke-dasharray: 173px;
+  stroke-dashoffset: 173px;
+  animation: letter-animation 2s ease forwards 1.8s;
 }
 
 #logo path:nth-child(8) {
+  stroke-dasharray: 321px;
+  stroke-dashoffset: 321px;
+  animation: letter-animation 2s ease forwards 2.1s;
+}
+
+@keyframes letter-animation {
+  0% {
+    stroke-dashoffset: 240px;
+  }
+  100% {
+    stroke-dashoffset: 0px;
+  }
+}
+
+@keyframes fill {
+  0% {
+    fill: #fff;
+  }
+  100% {
+    fill: #0f0f0f;
+  }
 }
 </style>

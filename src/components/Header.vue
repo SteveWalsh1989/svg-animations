@@ -3,14 +3,9 @@
 </script>
 
 <template>
-  <header class="fixed top-0 left-0 w-full mb-2 py-12 header">
+  <header
+    class="fixed top-0 left-0 w-full mb-2 py-12 bg-primary-blue text-primary-white"
+  >
     <h1 class="text-4xl">SVG Animations</h1>
   </header>
 </template>
-
-<style scoped>
-.header {
-  background-color: #0891b2;
-  color: white;
-}
-</style>

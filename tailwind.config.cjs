@@ -3,6 +3,10 @@ module.exports = {
   content: ['./index.html', './src/**/*.{vue,js,ts,jsx,tsx}'],
   theme: {
     extend: {},
+    colors: {
+      'primary-blue': '#0891b2',
+      'primary-white': '#ffffff',
+    },
   },
   plugins: [],
 };
