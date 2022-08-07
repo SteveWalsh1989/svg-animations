@@ -12,7 +12,7 @@ export const SVG_LIST = [
   {
     title: 'Donut Chart SVG',
     description:
-      'Added a couple of small donut chart SVGs to simulate some different styles for progress',
+      'Added a couple of small donut chart using plain CSS and SVGs to simulate some different styles for progress',
     component: DonutSvg,
     infinite: false,
   },

@@ -5,8 +5,9 @@
  */
 
 import DonutHalf from './Donuts/DonutHalf.vue';
+import DonutHalf2 from './Donuts/DonutHalf2.vue';
 
-const SVG_LIST = [DonutHalf];
+const SVG_LIST = [DonutHalf, DonutHalf2];
 </script>
 
 <template>
