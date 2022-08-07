@@ -7,8 +7,16 @@ import LoadingCircles from '../components/LoadingCircles.vue';
 import PlantSVG from '../components/PlantSVG.vue';
 import PlatonicShapes from '../components/PlatonicShapes.vue';
 import DonutSvg from '../components/DonutSVG.vue';
+import Icons from '../components/IconsSVG.vue';
 
 export const SVG_LIST = [
+  {
+    title: 'Icons SVG',
+    description:
+      'Small collection of icon svgs, some have interactive animations so try hovering or clicking on them',
+    component: Icons,
+    infinite: false,
+  },
   {
     title: 'Donut Chart SVG',
     description:

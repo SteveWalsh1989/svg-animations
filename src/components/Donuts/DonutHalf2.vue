@@ -28,13 +28,13 @@ const rightLineLength = computed(() => {
 <template>
   <div class="h-28 w-40">
     <div class="flex mb-4 ml-4">
-      <label for="value">Value:</label>
+      <label for="value" class="mr-2">Value:</label>
       <input
         type="number"
         v-model.number="leftValuePercentage"
         max="100"
         min="0"
-        class="w-8 bg-primary-white border-b-2"
+        class="w-12 bg-primary-white border-b-2 pl-2"
       />
     </div>
     <svg
@@ -46,7 +46,7 @@ const rightLineLength = computed(() => {
       class="flex"
     >
       <circle
-        v-if="leftValueTotal > 0"
+        v-if="leftValuePercentage > 0"
         class="leftValue-line"
         cx="100"
         cy="100"
@@ -57,7 +57,7 @@ const rightLineLength = computed(() => {
       />
 
       <circle
-        v-if="rightValueTotal > 0"
+        v-if="leftValuePercentage != 100"
         class="rightValue-line"
         cx="100"
         cy="100"
