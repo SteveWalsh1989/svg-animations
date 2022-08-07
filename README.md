@@ -15,8 +15,7 @@ Run `npm run dev`
 
 gifs make them seem a bit choppy, they are much smoother when running on the project directly
 
-
-![donuts](https://user-images.githubusercontent.com/13380603/183287816-4af011ad-48e1-4e18-bed8-9684cb395419.gif)
+![donutss](https://user-images.githubusercontent.com/13380603/183287866-d65bd104-f210-4789-9207-ce7f56a05590.gif)
 ![plant](https://user-images.githubusercontent.com/13380603/183267847-e5b84867-1ba8-4d1c-944f-7e8cf1c79121.gif)
 ![svg 1](https://user-images.githubusercontent.com/13380603/183257739-bf674bc7-c1e0-4ae3-8066-733c777e3fac.gif)
 ![loading dots](https://user-images.githubusercontent.com/13380603/183263261-b20b1ea7-7608-4517-9346-f2c1b0782ad2.gif)
