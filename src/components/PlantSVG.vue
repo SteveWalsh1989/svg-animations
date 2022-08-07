@@ -129,11 +129,12 @@
 
 .bigLeaf,
 .medLeaf {
-  animation: flutter 2.5s ease-in-out infinite, fadeIn 5s;
+  animation: flutter 2.5s ease-in-out infinite, fadeIn 4s;
 }
 
 .greenLeaf {
-  animation: fadeInGreen 2.5s, fadeIn 7s;
+  animation: fadeInGreen 2.5s, fadeIn 7s, scale 5s;
+  transform-origin: center;
 }
 .smallCircles {
   animation: bounce 3s ease-in-out infinite, fadeIn 8s;

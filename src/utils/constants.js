@@ -6,8 +6,16 @@ import LoadingDots from '../components/LoadingDots.vue';
 import LoadingCircles from '../components/LoadingCircles.vue';
 import PlantSVG from '../components/PlantSVG.vue';
 import PlatonicShapes from '../components/PlatonicShapes.vue';
+import DonutSvg from '../components/DonutSVG.vue';
 
 export const SVG_LIST = [
+  {
+    title: 'Donut Chart SVG',
+    description:
+      'Added a couple of small donut chart SVGs to simulate some different styles for progress',
+    component: DonutSvg,
+    infinite: false,
+  },
   {
     title: 'Custom SVG',
     description:
