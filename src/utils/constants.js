@@ -12,9 +12,8 @@ import Cells from '../components/CellsSVG.vue';
 
 export const SVG_LIST = [
   {
-    title: 'Testing SVG',
-    description:
-      'Testing out some progress style svgs for displaying/comparin values',
+    title: 'Progress/ comparison SVG',
+    description: 'SVGS to compare values ot show progress of sort.',
     component: Cells,
     infinite: false,
   },

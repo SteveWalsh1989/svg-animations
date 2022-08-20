@@ -6,19 +6,19 @@
 
 import { computed, ref } from 'vue';
 
+// these could be props
+const lineHeight = 6;
 const value1 = ref(340);
 const value2 = ref(150);
 
-const gap = 3;
-
+// gap and percentage calculations
+const gap = value1.value === 0 || value2.value === 0 ? 0 : 3;
 const total = computed(() => value1.value + value2.value);
-
-const value1Percent = Math.round((value1.value / total.value) * 100);
-const value2Percent = Math.round((value2.value / total.value) * 100);
-
-console.log(`Value1 - X1: ${0 + gap} | X2:${value1Percent * 2 - gap}  `);
-console.log(
-  `Value2 - X1: ${200 - gap} | X2:${200 - value2Percent * 2 - gap}  `,
+const value1Percent = computed(() =>
+  Math.round((value1.value / total.value) * 100),
+);
+const value2Percent = computed(() =>
+  Math.round((value2.value / total.value) * 100),
 );
 </script>
 
@@ -46,23 +46,25 @@ console.log(
         />
       </div>
     </div>
-    <svg height="6px" style="width: 100%">
+    <svg :height="`${lineHeight}px`" style="width: 100%">
       <line
-        x1="95%"
-        y1="3"
-        :x2="`${value1Percent - gap}%`"
-        y2="3"
-        style="stroke: #bbdefb"
+        v-if="value1"
+        :x1="`${gap}%`"
+        :y1="lineHeight / 2"
+        :x2="`${value1Percent - gap * 2}%`"
+        :y2="lineHeight / 2"
+        style="stroke: #26a69a; stroke-width: 5"
         stroke-linecap="round"
-        stroke-width="5"
       />
       <line
-        x1="5%"
-        y1="3"
-        :x2="`${value1Percent - gap * 2}%`"
-        y2="3"
-        style="stroke: #42a5f5; stroke-width: 5"
+        v-if="value2"
+        :x1="`${100 - gap}%`"
+        :y1="lineHeight / 2"
+        :x2="`${value1Percent - gap}%`"
+        :y2="lineHeight / 2"
+        style="stroke: #b2dfdb"
         stroke-linecap="round"
+        stroke-width="5"
       />
     </svg>
     <div class="flex mt-2">
