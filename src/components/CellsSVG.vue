@@ -4,15 +4,19 @@
  * dispalys a split for comparing values visually
  */
 
-import { computed, ref } from 'vue';
+import { computed, onMounted, onUpdated, ref } from 'vue';
 
-// these could be props
 const lineHeight = 6;
 const value1 = ref(340);
 const value2 = ref(150);
+const svgWidth = ref(null);
+const line1x1 = ref(0);
+const line1x2 = ref(0);
+const line2x1 = ref(0);
+const line2x2 = ref(0);
 
 // gap and percentage calculations
-const gap = value1.value === 0 || value2.value === 0 ? 0 : 3;
+const gap = value1.value === 0 || value2.value === 0 ? 0 : 4;
 const total = computed(() => value1.value + value2.value);
 const value1Percent = computed(() =>
   Math.round((value1.value / total.value) * 100),
@@ -20,10 +24,26 @@ const value1Percent = computed(() =>
 const value2Percent = computed(() =>
   Math.round((value2.value / total.value) * 100),
 );
+const svg = ref('#svg');
+function updatelines() {
+  svgWidth.value = svg.value.clientWidth;
+  line1x1.value = gap;
+  line1x2.value = svgWidth.value * (value1Percent.value / 100) - gap;
+  line2x1.value = svgWidth.value * (value1Percent.value / 100) + gap;
+  line2x2.value = svgWidth.value - gap;
+}
+
+onMounted(() => {
+  updatelines();
+});
+
+onUpdated(() => {
+  updatelines();
+});
 </script>
 
 <template>
-  <div class="w-52 box flex flex-col mx-auto">
+  <div class="w-52 box flex flex-col mx-auto" ref="svg">
     <div class="flex flex-col">
       <div class="flex mb-4 ml-4">
         <label for="value1" class="mr-2">Value 1:</label>
@@ -46,21 +66,21 @@ const value2Percent = computed(() =>
         />
       </div>
     </div>
-    <svg :height="`${lineHeight}px`" style="width: 100%">
+    <svg :height="`${lineHeight * 2}px`">
       <line
         v-if="value1"
-        :x1="`${gap}%`"
+        :x1="line1x1"
         :y1="lineHeight / 2"
-        :x2="`${value1Percent - gap * 2}%`"
+        :x2="line1x2"
         :y2="lineHeight / 2"
         style="stroke: #26a69a; stroke-width: 5"
         stroke-linecap="round"
       />
       <line
         v-if="value2"
-        :x1="`${100 - gap}%`"
+        :x1="line2x1"
         :y1="lineHeight / 2"
-        :x2="`${value1Percent - gap}%`"
+        :x2="line2x2"
         :y2="lineHeight / 2"
         style="stroke: #b2dfdb"
         stroke-linecap="round"
