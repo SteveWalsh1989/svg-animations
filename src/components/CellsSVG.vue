@@ -46,9 +46,9 @@ onUpdated(() => {
 
 <template>
   <div class="w-52 box flex flex-col mx-auto" ref="svg">
-    <div class="flex flex-col">
-      <div class="flex mb-4 ml-4">
-        <label for="value1" class="mr-2">Value 1:</label>
+    <div class="flex flex-col mb-12">
+      <div class="flex mb-8 ml-4">
+        <label for="value1" class="mr-4">left value:</label>
         <input
           type="number"
           v-model.number="value1"
@@ -58,7 +58,7 @@ onUpdated(() => {
         />
       </div>
       <div class="flex mb-4 ml-4">
-        <label for="value2" class="mr-2">Value 2:</label>
+        <label for="value2" class="mr-2">right value:</label>
         <input
           type="number"
           v-model.number="value2"
