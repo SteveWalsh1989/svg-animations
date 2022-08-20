@@ -6,7 +6,6 @@ import { computed, ref } from 'vue';
  */
 const lineLength = Math.PI * 92;
 const leftValueTotal = 45;
-const rightValueTotal = 100 - leftValueTotal;
 
 const gapSize = 6;
 

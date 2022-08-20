@@ -1,7 +1,8 @@
 <script setup>
 /*
  * Arrow group svg
- * Changes on hover
+ * Moves on hover
+ * Changes color on click
  */
 
 import { onMounted, ref } from 'vue';
@@ -24,9 +25,7 @@ function changeColor() {
   arrowGroup.value.style.cssText = `--primary-color: ${getRandomColor()}; --secondary-color: ${getRandomColor()};`;
 }
 
-onMounted(() => {
-  console.log('🍕 > onMounted > triangles', arrowGroup);
-});
+onMounted(() => {});
 </script>
 
 <template>
