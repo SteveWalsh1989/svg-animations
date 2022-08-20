@@ -8,8 +8,16 @@ import PlantSVG from '../components/PlantSVG.vue';
 import PlatonicShapes from '../components/PlatonicShapes.vue';
 import DonutSvg from '../components/DonutSVG.vue';
 import Icons from '../components/IconsSVG.vue';
+import Cells from '../components/CellsSVG.vue';
 
 export const SVG_LIST = [
+  {
+    title: 'Testing SVG',
+    description:
+      'Testing out some progress style svgs for displaying/comparin values',
+    component: Cells,
+    infinite: false,
+  },
   {
     title: 'Icons SVG',
     description:
