@@ -6,7 +6,6 @@
 
 import { computed, onMounted, onUpdated, ref } from 'vue';
 
-const lineHeight = 6;
 const value1 = ref(340);
 const value2 = ref(150);
 const svg = ref('#svg');
@@ -68,25 +67,26 @@ onUpdated(() => {
         />
       </div>
     </div>
-    <svg :height="`${lineHeight * 2}px`">
+    <svg height="12">
       <line
         v-if="value1"
         :x1="line1x1"
-        :y1="lineHeight / 2"
+        :y1="3"
         :x2="line1x2"
-        :y2="lineHeight / 2"
-        style="stroke: #26a69a; stroke-width: 5"
+        :y2="3"
+        stroke="#26a69a"
         stroke-linecap="round"
+        stroke-width="6"
       />
       <line
         v-if="value2"
         :x1="line2x1"
-        :y1="lineHeight / 2"
+        :y1="3"
         :x2="line2x2"
-        :y2="lineHeight / 2"
-        style="stroke: #b2dfdb"
+        :y2="3"
+        stroke="#b2dfdb"
         stroke-linecap="round"
-        stroke-width="5"
+        stroke-width="6"
       />
     </svg>
     <div class="flex mt-2">
