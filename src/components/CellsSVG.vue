@@ -46,21 +46,22 @@ console.log(
         />
       </div>
     </div>
-    <svg height="6" width="100" class="">
+    <svg height="6px" style="width: 100%">
       <line
-        :x1="0 + gap"
+        x1="95%"
         y1="3"
-        :x2="100 + gap - value1Percent"
+        :x2="`${value1Percent - gap}%`"
         y2="3"
-        style="stroke: #42a5f5; stroke-width: 6"
+        style="stroke: #bbdefb"
         stroke-linecap="round"
+        stroke-width="5"
       />
       <line
-        :x1="100 - gap"
+        x1="5%"
         y1="3"
-        :x2="100 - gap - value2Percent"
+        :x2="`${value1Percent - gap * 2}%`"
         y2="3"
-        style="stroke: #bbdefb; stroke-width: 6"
+        style="stroke: #42a5f5; stroke-width: 5"
         stroke-linecap="round"
       />
     </svg>
