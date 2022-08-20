@@ -9,10 +9,10 @@ import { computed, onMounted, onUpdated, ref } from 'vue';
 const leftValue = ref(340);
 const rightValue = ref(150);
 const svg = ref('#svg');
-const leftLinex1 = ref(0);
-const leftLinex2 = ref(0);
-const rightLinex1 = ref(0);
-const rightLinex2 = ref(0);
+const leftLineX1 = ref(0);
+const leftLineX2 = ref(0);
+const rightLineX1 = ref(0);
+const rightLineX2 = ref(0);
 
 const gap = leftValue.value === 0 || rightValue.value === 0 ? 0 : 4;
 
@@ -28,10 +28,10 @@ const rightValuePercent = computed(() =>
 // calculate new xy coordinate for svg lines
 function updatelines() {
   const svgWidth = svg.value.clientWidth;
-  leftLinex1.value = gap;
-  leftLinex2.value = svgWidth * (leftValuePercent.value / 100) - gap;
-  rightLinex1.value = svgWidth * (leftValuePercent.value / 100) + gap;
-  rightLinex2.value = svgWidth - gap;
+  leftLineX1.value = gap;
+  leftLineX2.value = svgWidth * (leftValuePercent.value / 100) - gap;
+  rightLineX1.value = svgWidth * (leftValuePercent.value / 100) + gap;
+  rightLineX2.value = svgWidth - gap;
 }
 
 onMounted(() => {
@@ -70,9 +70,9 @@ onUpdated(() => {
     <svg height="12">
       <line
         v-if="leftValue"
-        :x1="leftLinex1"
+        :x1="leftLineX1"
         :y1="3"
-        :x2="leftLinex2"
+        :x2="leftLineX2"
         :y2="3"
         stroke="#26a69a"
         stroke-linecap="round"
@@ -80,9 +80,9 @@ onUpdated(() => {
       />
       <line
         v-if="rightValue"
-        :x1="rightLinex1"
+        :x1="rightLineX1"
         :y1="3"
-        :x2="rightLinex2"
+        :x2="rightLineX2"
         :y2="3"
         stroke="#b2dfdb"
         stroke-linecap="round"
