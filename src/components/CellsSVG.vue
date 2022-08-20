@@ -9,14 +9,15 @@ import { computed, onMounted, onUpdated, ref } from 'vue';
 const lineHeight = 6;
 const value1 = ref(340);
 const value2 = ref(150);
-const svgWidth = ref(null);
+const svg = ref('#svg');
 const line1x1 = ref(0);
 const line1x2 = ref(0);
 const line2x1 = ref(0);
 const line2x2 = ref(0);
 
-// gap and percentage calculations
 const gap = value1.value === 0 || value2.value === 0 ? 0 : 4;
+
+// Percentage calculations
 const total = computed(() => value1.value + value2.value);
 const value1Percent = computed(() =>
   Math.round((value1.value / total.value) * 100),
@@ -24,13 +25,14 @@ const value1Percent = computed(() =>
 const value2Percent = computed(() =>
   Math.round((value2.value / total.value) * 100),
 );
-const svg = ref('#svg');
+
+// calculate new xy coordinate for svg lines
 function updatelines() {
-  svgWidth.value = svg.value.clientWidth;
+  const svgWidth = svg.value.clientWidth;
   line1x1.value = gap;
-  line1x2.value = svgWidth.value * (value1Percent.value / 100) - gap;
-  line2x1.value = svgWidth.value * (value1Percent.value / 100) + gap;
-  line2x2.value = svgWidth.value - gap;
+  line1x2.value = svgWidth * (value1Percent.value / 100) - gap;
+  line2x1.value = svgWidth * (value1Percent.value / 100) + gap;
+  line2x2.value = svgWidth - gap;
 }
 
 onMounted(() => {
