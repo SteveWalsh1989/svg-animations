@@ -4,7 +4,7 @@
  * dispalys a split for comparing values visually
  */
 
-import { computed, onMounted, onUpdated, ref, watch } from 'vue';
+import { computed, onMounted, onUpdated, ref } from 'vue';
 
 const leftValue = ref(340);
 const rightValue = ref(150);
@@ -13,7 +13,7 @@ const leftLineX1 = ref(0);
 const leftLineX2 = ref(0);
 const rightLineX1 = ref(0);
 const rightLineX2 = ref(0);
-const svgWidth = ref(200);
+
 const gap = leftValue.value === 0 || rightValue.value === 0 ? 0 : 4;
 
 // Percentage calculations
@@ -26,27 +26,20 @@ const rightValuePercent = computed(() =>
 );
 
 // calculate new xy coordinate for svg lines
-function updatelines(newWidth) {
+function updatelines() {
+  const svgWidth = svg.value.clientWidth;
   leftLineX1.value = gap;
-  leftLineX2.value = newWidth * (leftValuePercent.value / 100) - gap;
-  rightLineX1.value = newWidth * (leftValuePercent.value / 100) + gap;
-  rightLineX2.value = newWidth - gap;
+  leftLineX2.value = svgWidth * (leftValuePercent.value / 100) - gap;
+  rightLineX1.value = svgWidth * (leftValuePercent.value / 100) + gap;
+  rightLineX2.value = svgWidth - gap;
 }
 
 onMounted(() => {
-  updatelines(svg.value.clientWidth);
+  updatelines();
 });
 
-watch(svg.value.clientWidth, (newVal) => {
-  updatelines(newVal);
-});
-
-// these could be removed if getting value as prop
-watch(leftValue, () => {
-  updatelines(svgWidth.value);
-});
-watch(rightValue, () => {
-  updatelines(svgWidth.value);
+onUpdated(() => {
+  updatelines();
 });
 </script>
 
