@@ -9,8 +9,15 @@ import PlatonicShapes from '../components/PlatonicShapes.vue';
 import DonutSvg from '../components/DonutSVG.vue';
 import Icons from '../components/IconsSVG.vue';
 import Cells from '../components/CellsSVG.vue';
+import ProgressCircleSVG from '../components/ProgressCircleSVG.vue';
 
 export const SVG_LIST = [
+  {
+    title: 'Progress circle SVG',
+    description: 'Circular progress bar.',
+    component: ProgressCircleSVG,
+    infinite: false,
+  },
   {
     title: 'Value comparison SVG',
     description:
